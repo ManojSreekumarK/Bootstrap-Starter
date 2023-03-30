@@ -9,9 +9,15 @@
 .container-fluid {
   padding: 0;
 }
+h1 {
+  font-family: "Raleway", sans-serif;
+}
+p {
+  font-family: "Dosis", sans-serif;
+}
 .head-bg {
   width: 100%;
-  height: 40vh;
+  height: 25vh;
   background-color: #fee440;
   position: relative;
   overflow: hidden;
@@ -21,13 +27,15 @@ svg {
   top: 0;
   left: 0;
   width: 100%;
-  height: 40vh;
+  height: 25vh;
 }
 .logo {
   position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15%;
+  height: auto;
 }
 .btn-pink-moon {
   background: #ec008c;
@@ -41,28 +49,39 @@ svg {
   width: 100%;
   min-height: 100%;
 }
-.menu {
-  height: 4vh;
-  width: 4vw;
-  color: #d100d1;
+.user {
+  height: 100%;
 }
-.sb {
-  display: flex;
-  align-items: center;
-  background-color: #eefde0;
+.dropdown-toggle::after {
+  color: black;
 }
-.sb h5 {
-  color: #d100d1;
+
+footer img {
+  width: 75%;
+  height: 75%;
 }
-.vh {
-  display: flex;
-  align-items: center;
+.shadows {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
-.vh li {
-  display: flex;
-  flex-direction: row;
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-.star {
-  height: 4vh;
-  width: 2vw;
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 576px) {
+  .logo {
+    width: 25%;
+  }
+}
+@media (max-width: 767px) {
+  .fade-in {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
 }
